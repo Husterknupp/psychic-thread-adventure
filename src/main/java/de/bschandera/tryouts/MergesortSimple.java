@@ -5,6 +5,8 @@ import java.util.List;
 
 import net.sf.qualitycheck.Check;
 
+import org.apache.log4j.Logger;
+
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -14,19 +16,24 @@ import com.google.common.collect.Lists;
  */
 public class MergesortSimple implements MergesortStrategy {
 	private static MergesortSimple INSTANCE = new MergesortSimple();
+	private static final Logger LOGGER = Logger.getLogger(MergesortSimple.class);
 
 	private MergesortSimple() {
 	}
 
 	public static MergesortSimple getInstance() {
+		LOGGER.info("Instance of " + MergesortSimple.class.getSimpleName() + " assigned.");
 		return INSTANCE;
 	}
 
 	@Override
 	public List<Integer> sort(Iterable<Integer> unsorted) {
 		Check.noNullElements(unsorted, "unsorted");
+		LOGGER.info("Sort " + Iterables.size(unsorted) + " numbers.");
 
+		long start = System.nanoTime();
 		List<Integer> result = sortH(Lists.newLinkedList(unsorted));
+		LOGGER.info("Numbers are sorted, now. It took " + (start - System.nanoTime()) + " seconds.");
 
 		return result;
 	}
