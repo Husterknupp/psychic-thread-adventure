@@ -1,68 +1,74 @@
 package de.bschandera.tryouts;
 
+import java.util.LinkedList;
+import java.util.List;
+
+import net.sf.qualitycheck.Check;
+
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-import net.sf.qualitycheck.Check;
-
-import java.util.LinkedList;
-import java.util.List;
 
 /**
  * Implement the Mergesort algorithm without using threaded programing.
  */
 public class MergesortSimple implements MergesortStrategy {
+	private static MergesortSimple INSTANCE = new MergesortSimple();
 
-    private static MergesortSimple INSTANCE = new MergesortSimple();
+	private MergesortSimple() {
+	}
 
-    private MergesortSimple() {
-    }
+	public static MergesortSimple getInstance() {
+		return INSTANCE;
+	}
 
-    public static MergesortSimple getInstance() {
-        return INSTANCE;
-    }
+	@Override
+	public List<Integer> sort(Iterable<Integer> unsorted) {
+		Check.noNullElements(unsorted, "unsorted");
 
-    @Override
-    public List<Integer> sort(Iterable<Integer> unsorted) {
-        Check.noNullElements(unsorted, "unsorted");
+		List<Integer> result = sortH(Lists.newLinkedList(unsorted));
 
-        int n = Iterables.size(unsorted);
-        if (n <= 1) {
-            return ImmutableList.copyOf(unsorted);
-        } else {
-            List<Integer> copy = Lists.newLinkedList(unsorted);
-            return merge(sort(copy.subList(0, n / 2)), sort(copy.subList(n / 2, n)));
-        }
-    }
+		return result;
+	}
 
-    private List<Integer> merge(List<Integer> left, List<Integer> right) {
+	private List<Integer> sortH(List<Integer> unsorted) {
+		int n = unsorted.size();
+		if (n <= 1) {
+			return ImmutableList.copyOf(unsorted);
+		} else {
+			return ImmutableList.copyOf(merge(sortH(unsorted.subList(0, n / 2)), sortH(unsorted.subList(n / 2, n))));
+		}
+	}
 
-        left = new LinkedList<>(left);
-        right = new LinkedList<>(right);
-        List<Integer> result = new LinkedList<>();
+	private List<Integer> merge(List<Integer> left, List<Integer> right) {
 
-        while (left.size() > 0 && right.size() > 0) {
-            if (left.get(0) <= right.get(0)) {
-                result.add(left.get(0));
-                left.remove(0);
-            } else {
-                result.add(right.get(0));
-                right.remove(0);
-            }
-        }
+		// create new objects to allow element removal
+		left = new LinkedList<>(left);
+		right = new LinkedList<>(right);
+		List<Integer> result = new LinkedList<>();
 
-        if (left.size() != 0) {
-            for (Integer number : left) {
-                result.add(number);
-            }
-        } else {
-            for (Integer number : right) {
-                result.add(number);
-            }
-        }
+		while (left.size() > 0 && right.size() > 0) {
+			if (left.get(0) <= right.get(0)) {
+				result.add(left.get(0));
+				left.remove(0);
+			} else {
+				result.add(right.get(0));
+				right.remove(0);
+			}
+		}
 
-        return result;
+		if (left.size() != 0) {
+			for (Integer number : left) {
+				result.add(number);
+			}
+		} else {
+			for (Integer number : right) {
+				result.add(number);
+			}
+		}
 
-    }
+		return result;
+
+	}
 
 }
