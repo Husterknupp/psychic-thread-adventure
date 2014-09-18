@@ -33,7 +33,8 @@ public class MergesortSimple implements MergesortStrategy {
 
 		long start = System.nanoTime();
 		List<Integer> result = sortH(Lists.newLinkedList(unsorted));
-		LOGGER.info("Numbers are sorted, now. It took " + (start - System.nanoTime()) + " seconds.");
+		LOGGER.info("Numbers are sorted, now. Duration in milliseconds.");
+		LOGGER.info("(d): " + (System.nanoTime() - start) / 1000000);
 
 		return result;
 	}
