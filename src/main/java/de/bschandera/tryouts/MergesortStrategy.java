@@ -2,13 +2,17 @@ package de.bschandera.tryouts;
 
 import java.util.List;
 
-public interface MergesortStrategy {
+public abstract class MergesortStrategy {
 
 	/**
 	 * Sort the given {@linkplain java.lang.Integer}s with Mergesort algorithm.
 	 * 
 	 * @return All {@linkplain java.lang.Integer}s in ascending order.
 	 */
-	List<Integer> sort(Iterable<Integer> unsorted);
+	abstract List<Integer> sort(Iterable<Integer> unsorted);
+
+	public static MergesortStrategy mergesortSimple() {
+		return MergesortSimple.getInstance();
+	}
 
 }

@@ -14,15 +14,15 @@ import com.google.common.collect.Lists;
 /**
  * Implement the Mergesort algorithm without using threaded programing.
  */
-public class MergesortSimple implements MergesortStrategy {
+public class MergesortSimple extends MergesortStrategy {
 	private static MergesortSimple INSTANCE = new MergesortSimple();
 	private static final Logger LOGGER = Logger.getLogger(MergesortSimple.class);
 
 	private MergesortSimple() {
 	}
 
-	public static MergesortSimple getInstance() {
 		LOGGER.info("Instance of " + MergesortSimple.class.getSimpleName() + " assigned.");
+	static MergesortSimple getInstance() {
 		return INSTANCE;
 	}
 
@@ -44,7 +44,8 @@ public class MergesortSimple implements MergesortStrategy {
 		if (n <= 1) {
 			return ImmutableList.copyOf(unsorted);
 		} else {
-			return ImmutableList.copyOf(merge(sortH(unsorted.subList(0, n / 2)), sortH(unsorted.subList(n / 2, n))));
+			List<Integer> result = merge(sortH(unsorted.subList(0, n / 2)), sortH(unsorted.subList(n / 2, n)));
+			return ImmutableList.copyOf(result);
 		}
 	}
 
