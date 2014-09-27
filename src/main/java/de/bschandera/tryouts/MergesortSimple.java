@@ -16,25 +16,26 @@ import com.google.common.collect.Lists;
  */
 public class MergesortSimple extends MergesortStrategy {
 	private static MergesortSimple INSTANCE = new MergesortSimple();
-	private static final Logger LOGGER = Logger.getLogger(MergesortSimple.class);
+	private static final Logger LOG = Logger.getLogger(MergesortSimple.class);
 
 	private MergesortSimple() {
 	}
 
-		LOGGER.info("Instance of " + MergesortSimple.class.getSimpleName() + " assigned.");
 	static MergesortSimple getInstance() {
+		LOG.info("Use " + MergesortSimple.class.getSimpleName() + " for sorting.");
 		return INSTANCE;
 	}
 
 	@Override
 	public List<Integer> sort(Iterable<Integer> unsorted) {
 		Check.noNullElements(unsorted, "unsorted");
-		LOGGER.info("Sort " + Iterables.size(unsorted) + " numbers.");
+		LOG.info("Sort (n) numbers. It took time (d) in ms.");
+		LOG.info("(n): " + Iterables.size(unsorted));
 
 		long start = System.nanoTime();
 		List<Integer> result = sortH(Lists.newLinkedList(unsorted));
-		LOGGER.info("Numbers are sorted, now. Duration in milliseconds.");
-		LOGGER.info("(d): " + (System.nanoTime() - start) / 1000000);
+		long end = System.nanoTime();
+		LOG.info("(d): " + (end - start) / 1000000);
 
 		return result;
 	}
