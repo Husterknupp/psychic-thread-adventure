@@ -13,10 +13,10 @@ Micro Benchmarking libraries
 
 Adventure Planning
 =================
-Threading constellation
-* w/o threading
+Threading constellations
+* without threading, i.e., one execution path, no branching
 * few threads (fix number of threads)
-* dynamically created threads (no fixed number)
+* dynamically created threads according to high/low `n`
 * (probably) M. written in functional style, oriented towards [this article](http://stackoverflow.com/questions/24855746/understanding-when-and-how-to-use-java-8-lambdas)
 
 Run different constellations with 
