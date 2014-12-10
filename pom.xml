@@ -57,7 +57,9 @@
 					</dependency>
 				</dependencies>
 				<configuration>
-					<excludedGroups>${exclude.test.groups}</excludedGroups>
+					<excludes>
+						<exclude>**/AdventureTest.java</exclude>
+					</excludes>
 					<systemPropertyVariables>
 						<log4j.configuration>file:${basedir}/src/test/resources/log4j-silent.properties</log4j.configuration>
 					</systemPropertyVariables>
@@ -65,5 +67,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 </project>
