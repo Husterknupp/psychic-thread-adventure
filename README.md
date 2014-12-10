@@ -19,8 +19,16 @@ Threading constellations
 * dynamically created threads according to high/low `n`
 * (probably) M. written in functional style, oriented towards [this article](http://stackoverflow.com/questions/24855746/understanding-when-and-how-to-use-java-8-lambdas)
 
-Run different constellations with 
-* different `n`s and 
+Run different constellations with
+* different number of threads
+  * #Threads 2
+  * #Threads 3
+  * #Threads 4
+  * #Threads 8
+* different `n`s
+  * 10,
+  * 1.000,
+  * 1.000.000 and 
 * on different machines
 
 Results
