@@ -2,16 +2,13 @@ package de.bschandera.tryouts;
 
 import static org.fest.assertions.Assertions.assertThat;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.Test;
 
 import com.google.common.collect.Lists;
 
 public class MergesortSimpleTest {
 
-	MergesortStrategy lucy = MergesortSimple.getInstance();
+	private static final MergesortSimple lucy = new MergesortSimple();
 
 	@Test
 	public void testSort() {

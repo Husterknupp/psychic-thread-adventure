@@ -14,21 +14,14 @@ import com.google.common.collect.Lists;
 /**
  * Implement the Mergesort algorithm without using threaded programing.
  */
-public class MergesortSimple extends MergesortStrategy {
-	private static MergesortSimple INSTANCE = new MergesortSimple();
+public class MergesortSimple implements MergesortStrategy {
 	private static final Logger LOG = Logger.getLogger(MergesortSimple.class);
-
-	private MergesortSimple() {
-	}
-
-	static MergesortSimple getInstance() {
-		LOG.info("Use " + MergesortSimple.class.getSimpleName() + " for sorting.");
-		return INSTANCE;
-	}
 
 	@Override
 	public List<Integer> sort(Iterable<Integer> unsorted) {
 		Check.noNullElements(unsorted, "unsorted");
+		LOG.info("Use " + MergesortSimple.class.getSimpleName() + " for sorting.");
+
 		LOG.info("Sort (n) numbers. It took time (d) in ms.");
 		LOG.info("(n): " + Iterables.size(unsorted));
 
@@ -40,7 +33,7 @@ public class MergesortSimple extends MergesortStrategy {
 		return result;
 	}
 
-	private List<Integer> sortH(List<Integer> unsorted) {
+	private static List<Integer> sortH(List<Integer> unsorted) {
 		int n = unsorted.size();
 		if (n <= 1) {
 			return ImmutableList.copyOf(unsorted);
@@ -50,8 +43,7 @@ public class MergesortSimple extends MergesortStrategy {
 		}
 	}
 
-	private List<Integer> merge(List<Integer> left, List<Integer> right) {
-
+	private static List<Integer> merge(List<Integer> left, List<Integer> right) {
 		// create new objects to allow element removal
 		left = new LinkedList<>(left);
 		right = new LinkedList<>(right);
