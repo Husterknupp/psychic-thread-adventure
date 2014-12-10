@@ -36,4 +36,12 @@ Run different constellations with
 
 Results
 -----------------
-*add results here*
+*2014-12-10*
+```
+AdventureTest.sort4000Numbers1Thread: [measured 10 out of 15 rounds, threads: 1 (sequential)]
+ round: 0.04 [+- 0.01], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 12, GC.time: 0.01, time.total: 0.62, time.warmup: 0.20, time.bench: 0.42
+```
+```
+AdventureTest.sort16000Numbers1Thread: [measured 10 out of 15 rounds, threads: 1 (sequential)]
+ round: 0.77 [+- 0.09], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 51, GC.time: 0.07, time.total: 11.78, time.warmup: 4.05, time.bench: 7.73
+```
