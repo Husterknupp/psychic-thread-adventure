@@ -15,8 +15,11 @@ Adventure Planning
 =================
 Threading constellations
 * without threading, i.e., one execution path, no branching
+  * consider different `n` and different machines
 * few threads (fix number of threads)
+  * consider different #Threads, different `n` and different machines
 * dynamically created threads according to high/low `n`
+  * consider different `n` and different machines
 * (probably) M. written in functional style, oriented towards [this article](http://stackoverflow.com/questions/24855746/understanding-when-and-how-to-use-java-8-lambdas)
 
 Run different constellations with
