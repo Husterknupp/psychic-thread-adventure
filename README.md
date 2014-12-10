@@ -11,9 +11,18 @@ Micro Benchmarking libraries
 * https://code.google.com/p/caliper/source/browse/tutorial/Tutorial.java
 * http://perf4j.codehaus.org/devguide.html
 
-*Results*
-TeX These constellations with different `n`s and on different machines
-Mergesort w/o threading
-M. with few threads (fix number of threads)
-M. with dynamically created threads (no fixed number)
-(probably) M. written in functional style, oriented towards http://stackoverflow.com/questions/24855746/understanding-when-and-how-to-use-java-8-lambdas
+Adventure Planning
+=================
+Threading constellation
+* w/o threading
+* few threads (fix number of threads)
+* dynamically created threads (no fixed number)
+* (probably) M. written in functional style, oriented towards [this article](http://stackoverflow.com/questions/24855746/understanding-when-and-how-to-use-java-8-lambdas)
+
+Run different constellations with 
+* different `n`s and 
+* on different machines
+
+Results
+-----------------
+*add results here*
