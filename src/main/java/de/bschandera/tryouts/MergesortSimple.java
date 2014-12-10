@@ -5,31 +5,18 @@ import java.util.List;
 
 import net.sf.qualitycheck.Check;
 
-import org.apache.log4j.Logger;
-
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
 /**
  * Implement the Mergesort algorithm without using threaded programing.
  */
 public class MergesortSimple implements MergesortStrategy {
-	private static final Logger LOG = Logger.getLogger(MergesortSimple.class);
 
 	@Override
 	public List<Integer> sort(Iterable<Integer> unsorted) {
 		Check.noNullElements(unsorted, "unsorted");
-		LOG.info("Use " + MergesortSimple.class.getSimpleName() + " for sorting.");
-
-		LOG.info("Sort (n) numbers. It took time (d) in ms.");
-		LOG.info("(n): " + Iterables.size(unsorted));
-
-		long start = System.nanoTime();
 		List<Integer> result = sortH(Lists.newLinkedList(unsorted));
-		long end = System.nanoTime();
-		LOG.info("(d): " + (end - start) / 1000000);
-
 		return result;
 	}
 
