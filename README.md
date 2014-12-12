@@ -37,6 +37,8 @@ Run different constellations with
 
 Results
 -----------------
+NOTE: Merge sort's average case **performance** is`Ο(n log n)`
+
 *2014-12-10 - My HP machine (2 cors AMD Sempron, 3GB RAM)*
 ```
 AdventureTest.sort4000Numbers1Thread: [measured 10 out of 15 rounds, threads: 1 (sequential)]
