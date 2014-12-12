@@ -30,9 +30,9 @@ Run different constellations with
   * #Threads 4
   * #Threads 8
 * different `n`s
-  * 10,
-  * 1.000,
-  * 1.000.000 and 
+  * 4.000,
+  * 16.000,
+  * 32.000 and
 * on different machines
 
 Results
