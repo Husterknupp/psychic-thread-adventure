@@ -37,7 +37,7 @@ Run different constellations with
 
 Results
 -----------------
-*2014-12-10*
+*2014-12-10 - My HP machine (2 cors AMD Sempron, 3GB RAM)*
 ```
 AdventureTest.sort4000Numbers1Thread: [measured 10 out of 15 rounds, threads: 1 (sequential)]
  round: 0.04 [+- 0.01], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 12, GC.time: 0.01, time.total: 0.62, time.warmup: 0.20, time.bench: 0.42
