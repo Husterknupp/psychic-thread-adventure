@@ -14,6 +14,10 @@ Micro Benchmarking libraries
 
 Adventure Planning
 =================
+To run the measuring on your machine, please run `Adventure.java` as JUnit test.
+
+---
+
 Threading constellations
 * without threading, i.e., one execution path, no branching
   * consider different `n` and different machines
