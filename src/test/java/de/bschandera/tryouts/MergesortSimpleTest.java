@@ -2,13 +2,19 @@ package de.bschandera.tryouts;
 
 import static org.fest.assertions.Assertions.assertThat;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import com.google.common.collect.Lists;
 
 public class MergesortSimpleTest {
 
-	private static final MergesortSimple lucy = new MergesortSimple();
+	private static MergesortSimple lucy;
+
+	@Before
+	public void setup() {
+		lucy = new MergesortSimple();
+	}
 
 	@Test
 	public void testSort() {
