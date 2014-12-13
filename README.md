@@ -38,6 +38,7 @@ Run different constellations with
 Results
 -----------------
 NOTE: Merge sort's average case **performance** is `O(n log n)`
+
 NOTE: Limits of concurrency gains: The runtime is limited by parts of the task which can be performed in parallel. The theoretical possible performance gain can be calculated by the following rule which is referred to as **Amdahl's Law**.
 > If F is the percentage of the program which can not run in parallel and N is the number of processes, then the maximum performance gain is 
 > `1 / (F + ((1-F)/n))` (thank you [vogella](http://www.vogella.com/tutorials/JavaConcurrency/article.html#concurrency_amdahl))
