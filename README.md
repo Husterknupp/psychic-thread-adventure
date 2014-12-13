@@ -37,7 +37,7 @@ Run different constellations with
 
 Results
 -----------------
-NOTE: Merge sort's average case **performance** is`Ο(n log n)`
+NOTE: Merge sort's average case **performance** is `O(n log n)`
 
 *2014-12-10 - My HP machine (2 cors AMD Sempron, 3GB RAM)*
 ```
@@ -48,3 +48,10 @@ AdventureTest.sort4000Numbers1Thread: [measured 10 out of 15 rounds, threads: 1 
 AdventureTest.sort16000Numbers1Thread: [measured 10 out of 15 rounds, threads: 1 (sequential)]
  round: 0.77 [+- 0.09], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 51, GC.time: 0.07, time.total: 11.78, time.warmup: 4.05, time.bench: 7.73
 ```
+
+Effort Notes
+-----------------
+- Find out what part of the programm ist really cost expensive
+- change your mind. Even the programm flow has to be in a parallel manner. Dont wait for one thread to finish before calling another one.
+- Cope with the slightly different way of handling results that are calculated by different threads.
+- separate application logic from thread logic
