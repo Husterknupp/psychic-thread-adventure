@@ -31,7 +31,8 @@ public class MergesortSimple implements MergesortStrategy {
 	}
 
 	// TODO in case I want threads created dynamically this would be the right place to go. See #5
-	private static List<Integer> merge(List<Integer> left, List<Integer> right) {
+	// TODO move into interface? MergesortThreadedDouble uses this method
+	static List<Integer> merge(List<Integer> left, List<Integer> right) {
 		// create new objects to allow element removal
 		left = new LinkedList<>(left);
 		right = new LinkedList<>(right);
