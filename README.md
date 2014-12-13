@@ -39,7 +39,7 @@ Results
 -----------------
 NOTE: Merge sort's average case **performance** is `O(n log n)`
 
-*2014-12-12/13 #2 - My HP machine (2 cors AMD Sempron, 3GB RAM)*
+*2014-12-12/13 #2 - My HP machine (2 cores AMD Sempron, 3GB RAM)*
 ```
 Adventure.sort4000Numbers1Thread: [measured 10 out of 15 rounds, threads: 1 (sequential)]
  round: 0.04 [+- 0.01], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 11, GC.time: 0.02, time.total: 0.67, time.warmup: 0.24, time.bench: 0.44
@@ -73,25 +73,25 @@ Adventure.sort64000Numbers2Threads: [measured 10 out of 15 rounds, threads: 1 (s
  round: 14.94 [+- 2.25], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 222, GC.time: 0.75, time.total: 223.85, time.warmup: 74.43, time.bench: 149.42
 ```
 
-*2014-12-12/13 #1 - My HP machine (2 cors AMD Sempron, 3GB RAM)*
+*2014-12-12/13 #1 - My HP machine (2 cores AMD Sempron, 3GB RAM)*
 ```
 AdventureTest.sort4000Numbers1Thread: [measured 10 out of 15 rounds, threads: 1 (sequential)]
  round: 0.04 [+- 0.01], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 11, GC.time: 0.02, time.total: 0.63, time.warmup: 0.20, time.bench: 0.42
-```
-```
-AdventureTest.sort16000Numbers1Thread: [measured 10 out of 15 rounds, threads: 1 (sequential)]
- round: 0.75 [+- 0.02], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 48, GC.time: 0.08, time.total: 11.26, time.warmup: 3.77, time.bench: 7.49
 ```
 ```
 AdventureTest.sort4000Numbers2Threads: [measured 10 out of 15 rounds, threads: 1 (sequential)]
  round: 0.02 [+- 0.01], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 11, GC.time: 0.02, time.total: 0.38, time.warmup: 0.17, time.bench: 0.20
 ```
 ```
+AdventureTest.sort16000Numbers1Thread: [measured 10 out of 15 rounds, threads: 1 (sequential)]
+ round: 0.75 [+- 0.02], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 48, GC.time: 0.08, time.total: 11.26, time.warmup: 3.77, time.bench: 7.49
+```
+```
 AdventureTest.sort16000Numbers2Threads: [measured 10 out of 15 rounds, threads: 1 (sequential)]
  round: 0.26 [+- 0.05], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 51, GC.time: 0.20, time.total: 3.88, time.warmup: 1.36, time.bench: 2.52
 ```
 
-*2014-12-10 - My HP machine (2 cors AMD Sempron, 3GB RAM)*
+*2014-12-10 - My HP machine (2 cores AMD Sempron, 3GB RAM)*
 ```
 AdventureTest.sort4000Numbers1Thread: [measured 10 out of 15 rounds, threads: 1 (sequential)]
  round: 0.04 [+- 0.01], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 12, GC.time: 0.01, time.total: 0.62, time.warmup: 0.20, time.bench: 0.42
