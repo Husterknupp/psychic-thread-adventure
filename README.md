@@ -1,5 +1,5 @@
 psychic-thread-adventure
-========================
+=================
 What's the difference between sorting different counts of numbers using multiple threads and sorting them single threaded, in terms of time needed to sort the numbers?
 
 This project discovers how threading influences performance of simple algorithms like Mergesort algorithm. Besides that the effort will be documented what needs to be done to make a program run with multiple threads w/o using frameworks. Maybe some tests will be done using Java 8 later on.
@@ -7,7 +7,7 @@ This project discovers how threading influences performance of simple algorithms
 Inspired by Robert C. Martin's (et al.) Clean Code, 2009, Pearson Education, Inc, chapter on concurrency.
 
 Micro Benchmarking libraries
------------------
+=================
 * http://labs.carrotsearch.com/junit-benchmarks-tutorial.html#turning-junit4-tests-into-benchmarks
 * (not used) https://code.google.com/p/caliper/source/browse/tutorial/Tutorial.java
 * (not used) http://perf4j.codehaus.org/devguide.html
@@ -18,7 +18,7 @@ To run the measuring on your machine, please run `Adventure.java` as JUnit test.
 
 ---
 
-Threading constellations
+**Threading constellations**
 * without threading, i.e., one execution path, no branching
   * consider different `n` and different machines
 * few threads (fix number of threads)
@@ -27,7 +27,6 @@ Threading constellations
   * consider different `n` and different machines
 * (probably) M. written in functional style, oriented towards [this article](http://stackoverflow.com/questions/24855746/understanding-when-and-how-to-use-java-8-lambdas)
 
-Run different constellations with
 * different number of threads
   * #Threads 2
   * #Threads 3
@@ -40,7 +39,7 @@ Run different constellations with
 * on different machines
 
 Results
------------------
+=================
 NOTE: Merge sort's average case **performance** is `O(n log n)`
 
 NOTE: Limits of concurrency gains: The runtime is limited by parts of the task which can be performed in parallel. The theoretical possible performance gain can be calculated by the following rule which is referred to as **Amdahl's Law**.
@@ -110,7 +109,7 @@ AdventureTest.sort16000Numbers1Thread: [measured 10 out of 15 rounds, threads: 1
 ```
 
 Effort Notes
------------------
+=================
 - Find out what part of the programm ist really cost expensive
 - change your mind. Even the programm flow has to be in a parallel manner. Dont wait for one thread to finish before calling another one.
 - Cope with the slightly different way of handling results that are calculated by different threads.
