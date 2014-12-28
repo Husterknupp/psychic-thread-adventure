@@ -6,11 +6,16 @@ This project discovers how threading influences performance of simple algorithms
 
 Inspired by Robert C. Martin's (et al.) Clean Code, 2009, Pearson Education, Inc, chapter on concurrency.
 
-Micro Benchmarking libraries
+Additional Information
 =================
+
+**Micro Benchmarking libraries**
 * http://labs.carrotsearch.com/junit-benchmarks-tutorial.html#turning-junit4-tests-into-benchmarks
 * (not used) https://code.google.com/p/caliper/source/browse/tutorial/Tutorial.java
 * (not used) http://perf4j.codehaus.org/devguide.html
+
+**Concurrency and Distribution Framework**
+* http://akka.io/
 
 Adventure Planning
 =================
