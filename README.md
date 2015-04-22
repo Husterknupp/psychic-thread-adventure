@@ -47,9 +47,39 @@ Results
 =================
 NOTE: Merge sort's average case **performance** is `O(n log n)`
 
-NOTE: Limits of concurrency gains: The runtime is limited by parts of the task which can be performed in parallel. The theoretical possible performance gain can be calculated by the following rule which is referred to as **Amdahl's Law**.
+NOTE: Limits of concurrency gains: The runtime is limited by parts of the task which can be performed in parallel. 
+The theoretical possible performance gain can be calculated by the following rule which is referred to as **Amdahl's 
+Law** (thank you [vogella](http://www.vogella.com/tutorials/JavaConcurrency/article.html#concurrency_amdahl)).
 > If F is the percentage of the program which can not run in parallel and N is the number of processes, then the maximum performance gain is 
-> `1 / (F + ((1-F)/n))` (thank you [vogella](http://www.vogella.com/tutorials/JavaConcurrency/article.html#concurrency_amdahl))
+> `1 / (F + ((1-F)/n))`. So making at most code parallel as possible leads to highest performance gain!
+
+*2015-04-22 - My MacBook Pro (2 cores, Intel Core i7, 16GB RAM)*
+```
+Adventure.sort4000Numbers1Thread: [measured 10 out of 15 rounds, threads: 1 (sequential)]
+ round: 0.01 [+- 0.00], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 0, GC.time: 0.00, time.total: 0.16, time.warmup: 0.05, time.bench: 0.11
+Adventure.sort4000Numbers2Threads: [measured 10 out of 15 rounds, threads: 1 (sequential)]
+ round: 0.00 [+- 0.00], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 0, GC.time: 0.00, time.total: 0.07, time.warmup: 0.02, time.bench: 0.04
+Adventure.sort16000Numbers1Thread: [measured 10 out of 15 rounds, threads: 1 (sequential)]
+ round: 0.14 [+- 0.00], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 1, GC.time: 0.00, time.total: 2.02, time.warmup: 0.67, time.bench: 1.35
+Adventure.sort16000Numbers2Threads: [measured 10 out of 15 rounds, threads: 1 (sequential)]
+ round: 0.04 [+- 0.00], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 0, GC.time: 0.00, time.total: 0.57, time.warmup: 0.20, time.bench: 0.37
+Adventure.sort32000Numbers1Thread: [measured 10 out of 15 rounds, threads: 1 (sequential)]
+ round: 0.53 [+- 0.03], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 2, GC.time: 0.01, time.total: 7.93, time.warmup: 2.64, time.bench: 5.29
+Adventure.sort32000Numbers2Threads: [measured 10 out of 15 rounds, threads: 1 (sequential)]
+ round: 0.14 [+- 0.00], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 2, GC.time: 0.00, time.total: 2.11, time.warmup: 0.71, time.bench: 1.40
+Adventure.sort64000Numbers1Thread: [measured 10 out of 15 rounds, threads: 1 (sequential)]
+ round: 2.31 [+- 0.39], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 3, GC.time: 0.01, time.total: 33.61, time.warmup: 10.52, time.bench: 23.09
+Adventure.sort64000Numbers2Threads: [measured 10 out of 15 rounds, threads: 1 (sequential)]
+ round: 0.55 [+- 0.02], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 3, GC.time: 0.02, time.total: 8.47, time.warmup: 2.94, time.bench: 5.52
+Adventure.sort128000Numbers1Thread: [measured 10 out of 15 rounds, threads: 1 (sequential)]
+ round: 8.72 [+- 1.40], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 56, GC.time: 0.18, time.total: 129.65, time.warmup: 42.42, time.bench: 87.24
+Adventure.sort128000Numbers2Threads: [measured 10 out of 15 rounds, threads: 1 (sequential)]
+ round: 2.29 [+- 0.36], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 27, GC.time: 0.14, time.total: 34.22, time.warmup: 11.32, time.bench: 22.90
+Adventure.sort256000Numbers1Thread: [measured 10 out of 15 rounds, threads: 1 (sequential)]
+ round: 32.85 [+- 2.82], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 35, GC.time: 0.34, time.total: 479.17, time.warmup: 150.64, time.bench: 328.53
+Adventure.sort256000Numbers2Threads: [measured 10 out of 15 rounds, threads: 1 (sequential)]
+ round: 7.97 [+- 0.58], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 11, GC.time: 0.12, time.total: 123.88, time.warmup: 44.23, time.bench: 79.65
+```
 
 *2014-12-12/13 #2 - My HP machine (2 cores AMD Sempron, 3GB RAM)*
 ```
