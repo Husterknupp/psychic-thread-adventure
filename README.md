@@ -15,7 +15,10 @@ Additional Information
 * (not used) http://perf4j.codehaus.org/devguide.html
 
 **Concurrency and Distribution Framework**
-* http://akka.io/
+* http://akka.io/ (Actor model: https://www.youtube.com/watch?v=7erJ1DV_Tlo)
+* distributed programming
+** http://doc.akka.io/docs/akka/2.1.0/java/microkernel.html
+** http://doc.akka.io/docs/akka/snapshot/java/remoting.html
 
 Adventure Planning
 =================
@@ -145,7 +148,7 @@ AdventureTest.sort16000Numbers1Thread: [measured 10 out of 15 rounds, threads: 1
 
 Effort Notes
 =================
-- Find out what part of the programm ist really cost expensive
-- change your mind. Even the programm flow has to be in a parallel manner. Dont wait for one thread to finish before calling another one.
+- Find out what part of the program ist really cost expensive
+- change your mind. Even the program flow has to be in a parallel manner. Dont wait for one thread to finish before calling another one.
 - Cope with the slightly different way of handling results that are calculated by different threads.
 - separate application logic from thread logic

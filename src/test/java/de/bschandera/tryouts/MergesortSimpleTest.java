@@ -31,7 +31,7 @@ public class MergesortSimpleTest {
 	}
 
 	@Test
-	public void testSortWithEgalSequence() {
+	public void testSortWithEqualSequence() {
 		assertThat(lucy.sort(Lists.newArrayList(7, 5, 3, 5))).isEqualTo(Lists.newArrayList(3, 5, 5, 7));
 	}
 
