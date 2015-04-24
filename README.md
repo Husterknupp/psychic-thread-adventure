@@ -17,14 +17,23 @@ Additional Information
 **Concurrency and Distribution Framework**
 * http://akka.io/ (Actor model: https://www.youtube.com/watch?v=7erJ1DV_Tlo)
 * distributed programming
-** http://doc.akka.io/docs/akka/2.1.0/java/microkernel.html
-** http://doc.akka.io/docs/akka/snapshot/java/remoting.html
+ * http://doc.akka.io/docs/akka/2.1.0/java/microkernel.html
+ * http://doc.akka.io/docs/akka/snapshot/java/remoting.html
+
+Adventure Experience
+=================
+To run the measuring on your machine, please run`Adventure.java` as JUnit test.
+```
+mvn -Dtest=Adventure clean test
+```
+
+Run the akka version like this:
+```
+clean compile exec:java -Dexec.mainClass=de.bschandera.tryouts.MergesortThreadedWithAkka
+```
 
 Adventure Planning
 =================
-To run the measuring on your machine, please run `Adventure.java` as JUnit test.
-
----
 
 **Threading constellations**
 * without threading, i.e., one execution path, no branching
