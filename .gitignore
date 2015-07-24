@@ -14,6 +14,11 @@ target/
 etc/
 log/
 
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/*
+
 # Mac
 .DS_Store
 
@@ -26,7 +31,6 @@ log/
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.ear
 

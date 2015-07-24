@@ -24,7 +24,7 @@ Adventure Experience
 =================
 To run the measuring on your machine, please run`Adventure.java` as JUnit test.
 ```
-mvn -Dtest=Adventure clean test
+gradle clean test --tests *Adventure
 ```
 
 Run the akka version like this:
